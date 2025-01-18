@@ -1,0 +1,29 @@
+#include <iostream>
+#include <string>
+#include "MyLib.h"
+#include <array>
+using namespace std;
+
+int ReadNumber(string message) {
+	int num;
+	cout << message;
+	cin >> num;
+	while (cin.fail()) {
+		cin.clear();
+		cout << "Invalid number.\n";
+		cin.ignore(INT_MAX, '\n');
+		cin >> num;
+	}
+	return num;
+}
+
+int main() {
+	
+	int num = ReadNumber("Enter a number : ");
+	
+	
+	//cin is an object that have many methods and attributes.
+	// fail() method returns true if the last input was failure and ture if it is sucessful
+	// clear() method set the fail() method to false
+	// ignore cleans the input buffer 
+ }
