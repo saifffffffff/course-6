@@ -1,0 +1,38 @@
+#include <iostream>
+#include <string>
+#include "MyLib.h"
+#include <array>
+using namespace std;
+
+// declaration function
+
+void PrintString(string);
+void PrintArray(int[]);
+void PrintFloat(float MyNumberLol);
+
+// in declaration you can name the parameters as you like but it wont affect
+// even if it is not the same name
+
+
+int main() {
+	PrintString("Hi");
+	PrintFloat(1.1);
+	int arr[] = { 1, 2, 3 };
+	PrintArray(arr);
+
+}
+
+
+// definition function 
+
+void PrintString(string message) {
+	cout << message << endl;
+}
+
+void PrintArray(int arr[]) {
+	MyLib::PrintArray(arr,3);
+}
+
+void PrintFloat(float num) {
+	cout << num << endl;
+}
