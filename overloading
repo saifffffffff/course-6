@@ -1,0 +1,77 @@
+#include <iostream>
+#include <string>
+#include "MyLib.h"
+#include <array>
+using namespace std;
+
+
+// function overloading ( polymorphism in oop )
+// in function overloading the functoins is differinciated in the types, number or order of parameters.
+
+// integers
+int MySum(int a, int b) {
+	return a + b ;
+}
+int MySum(int a, int b, int c) {
+	return a + b + c;
+}
+
+int MySum(int a , int b ,int c , int d){
+	return a + b + c + d;
+}
+
+// doubles 
+double MySum(double a, double b) {
+	return a + b;
+}
+
+double MySum(double a, double b, double c) {
+	return a + b + c;
+
+}
+double MySum(double a, double b, double c, double d) {
+	return a + b + c + d;
+}
+
+
+//floats 
+
+float MySum(float a, float b) {
+	return a + b;
+}
+
+float MySum(float a, float b, float c) {
+	return a + b + c;
+
+}
+float MySum(float a, float b, float c, float d) {
+	return a + b + c + d;
+}
+// order example
+double MySum(double a, int b) {
+	return a + b;
+}
+double MySum(int a, double b) {
+	return a + b;
+}
+
+
+int main() {
+	cout << MySum(10, 10) << endl;
+	cout << MySum(10, 10, 10) << endl;
+	cout << MySum(10, 10, 10, 10) << endl;
+	
+	cout << MySum(10.2, 10.3) << endl;
+	cout << MySum(10.5, 10.3, 10.7) << endl;
+	cout << MySum(10.2, 10.9, 10.4, 10.5) << endl;
+
+	// if we want to use the float functions we have to do a explicit conversion becuase number with a point considers double
+
+
+	cout << MySum((float)10.2, (float)10.3) << endl;
+	cout << MySum((float)10.5, (float)10.3, (float)10.7) << endl;
+	cout << MySum((float)10.2, (float)10.9, (float)10.4, (float)10.5) << endl;
+
+	cout << MySum(10.5, 19) << endl;
+	cout << MySum(19, 10.5);
+}
