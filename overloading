@@ -69,6 +69,7 @@ int main() {
 
 
 	cout << MySum((float)10.2, (float)10.3) << endl;
+	// 0R cout << MySum(10.2f, 10.3f) << endl;
 	cout << MySum((float)10.5, (float)10.3, (float)10.7) << endl;
 	cout << MySum((float)10.2, (float)10.9, (float)10.4, (float)10.5) << endl;
 
