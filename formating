@@ -1,0 +1,75 @@
+#include "MyLib.h"
+#include <array>
+#include <iostream>
+#include <iomanip>
+#include <string>
+using namespace std;
+// % starts the formating 
+
+// d for int 
+// f for float and double
+// c for character 
+// s for array of characters (c style array)
+
+// * if you want to pass a varaible as a parameter
+
+// %.* shows * points (%.4f shows 4 points)
+
+// %0* fills the number with * zeros 
+
+	
+int main() {
+
+	int IntNum = 10;
+	float Fnum = 10.2313;
+	double Dnum = 10.432;
+	char character = 'a';
+	char String[] = "saif";
+	
+	printf("my integer is %d\n", IntNum);
+	printf("my double is %f\n", Dnum);
+	printf("my float is %f\n", Fnum);
+	printf("my char is %c\n", character);
+	printf("my char is %s\n", String);
+	
+	
+	//spaces int string char 
+	
+	printf("%4d \n", IntNum);
+	printf("%3d \n", IntNum);
+	printf("%2d \n", IntNum);
+	printf("%*d \n",4,IntNum);
+	
+	
+	printf("%4c \n", character);
+	printf("%1c \n", character);
+	printf("%7s \n", String);
+	printf("%4s \n\n", String);
+	
+	// points 
+	
+	printf("%.0f \n", Fnum);
+	printf("%.1f \n", Fnum);
+	printf("%.2f \n", Fnum);
+	printf("%.3f \n", Fnum);
+	printf("%.4f \n", Fnum);
+	printf("%.5f \n", Fnum);
+	printf("%.*f \n\n",6,Fnum);
+	
+	printf("%.0f \n", Dnum);
+	printf("%.1f \n", Dnum);
+	printf("%.2f \n", Dnum);
+	printf("%.3f \n", Dnum);
+	printf("%.4f \n", Dnum);
+	printf("%.5f \n", Dnum);
+	printf("%.*f \n\n", 6, Dnum);
+	
+	// zeros
+	
+	printf("%04d \n", IntNum);
+	printf("%04c \n", character);
+	printf("%07s \n\n", String);
+	
+	cout << setw(7) << "saif" << setw(3) << "|";
+	
+}
