@@ -1,0 +1,33 @@
+
+#include "MyLib.h"
+#include <array>
+#include <vector>
+#include <iostream>
+#include <iomanip>
+#include <string>
+using namespace std;
+
+void ReadVector(vector <int> & v) {
+	char askToEnterNum = 'y';
+	int num = 0;
+	do {
+		num = Read::ReadValidNumber("Enter a number : ");
+		v.push_back(num);
+		cout << "Do you want to enter another numbre (y) (n) ? ";
+		cin >>askToEnterNum;
+	} while (askToEnterNum == 'Y' || askToEnterNum == 'y');
+}
+
+// passing the vector by ref is faster than taking a copy from it 
+void PrintVector(vector <int>& v) {
+	for (int& n : v)
+		cout << n << " ";
+}
+	
+int main() {
+
+	
+	vector <int> vNumbers;
+	ReadVector(vNumbers);
+	PrintVector(vNumbers);
+}
