@@ -1,0 +1,69 @@
+
+#include "MyLib.h"
+#include <array>
+#include <vector>
+#include <iostream>
+#include <iomanip>
+#include <string>
+using namespace std;
+void PrintVector(vector <int>& v) {
+	for (int& n : v)
+		cout << n << " ";
+}
+void ReadVector(vector <int> & v) {
+	char askToEnterNum = 'y';
+	int num = 0;
+	do {
+		num = Read::ReadValidNumber("Enter a number : ");
+		v.push_back(num);
+		cout << "Do you want to enter another numbre (y) (n) ? ";
+		cin >>askToEnterNum;
+	} while (askToEnterNum == 'Y' || askToEnterNum == 'y');
+}
+
+
+struct stEmployee {
+	string FirstName;
+	string LastName;
+	short salary;
+};
+
+
+void ReadEmployees(vector <stEmployee> & Employee)
+{
+	char askForNewEmp = 'y';
+	stEmployee TempEmployee;
+
+	do {
+		TempEmployee.FirstName = Read::ReadString("first name : ");
+		TempEmployee.LastName = Read::ReadString("last name : ");
+		TempEmployee.salary = Read::ReadPositivevValidNumber("salary : ");
+		askForNewEmp = Read::ReadChar("Do you want to add another employee (y) (n) ? ");
+
+		Employee.push_back(TempEmployee);
+
+	} while (askForNewEmp == 'y' || askForNewEmp == 'Y');
+}
+
+
+// passing the vector by ref is faster than taking a copy from it 
+	
+void PrintEmployees(vector <stEmployee> &  Employees) {
+	cout << "Employees : \n\n";
+	for (stEmployee  & emp : Employees) {
+		cout << "first name : " << emp.FirstName<< endl;
+		cout << "last name : " <<emp.LastName<< endl;
+		cout << "salary : " << emp.salary<<endl<< endl;
+	}
+}
+
+
+
+int main() {
+
+	vector <stEmployee> vEmployee;
+	
+	ReadEmployees(vEmployee);
+
+	PrintEmployees(vEmployee);
+}
