@@ -1,0 +1,30 @@
+
+#include "MyLib.h"
+#include <array>
+#include <vector>
+#include <iostream>
+#include <iomanip>
+#include <string>
+using namespace std;
+
+
+
+
+int main() {
+
+	int c = 10;
+	int& v = c;
+
+	cout << v << endl << c << endl;
+
+	cout << &v << endl << &c << endl;
+
+	c = 20;
+	
+	cout << v << endl << c << endl;
+
+	v = 30;
+
+	cout << v << endl << c << endl;
+
+
