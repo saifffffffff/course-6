@@ -1,0 +1,33 @@
+
+#include "MyLib.h"
+#include <array>
+#include <vector>
+#include <iostream>
+#include <iomanip>
+#include <string>
+using namespace std;
+
+
+
+int main() {
+
+	int a = 1;
+	cout << "the value of a : " << a<< endl;
+	cout << "the address of a : " << &a << endl;
+
+	int* p = &a;
+	cout << "the value of p : " << p << endl;
+	cout << "the address of p : " << &p << endl;
+
+	// dereferencing 
+	cout << "dereferencing the pointer : " << *p << endl;
+	
+// changing the value of the original variable 
+	
+	*p = 2;
+
+	cout << "the new value of a : " << a << endl;
+	cout << "the dereferencing value of the pointer : " << *p << endl;
+
+
+}
