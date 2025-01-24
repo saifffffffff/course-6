@@ -1,0 +1,43 @@
+
+#include "MyLib.h"
+#include <array>
+#include <vector>
+#include <iostream>
+#include <iomanip>
+#include <string>
+using namespace std;
+
+void SwapByPointers(int* n1, int* n2) {
+
+
+	int temp = *n1;
+	*n1 = *n2;
+	*n2 = temp;
+
+
+}
+
+void SwapByReference(int& a, int& b) {
+	int temp = a;
+	a = b;
+	b = temp;
+}
+
+
+
+int main() {
+
+	int a = 10;
+	int b = 20;
+
+	cout << "value of a before swaping : " << a << endl;
+	cout << "value of b before swaping : " << b << endl << endl;
+	SwapByReference(a, b);
+	cout << "value of a after swaping : " << a << endl;
+	cout << "value of b after swaping : " << b << endl << endl;
+	SwapByPointers(&a, &b);
+	cout << "value of a after swaping the second time : " << a << endl;
+	cout << "value of b after swaping the second time : " << b << endl;
+
+
+}
