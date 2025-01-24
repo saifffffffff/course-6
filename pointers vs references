@@ -1,0 +1,40 @@
+#include "MyLib.h"
+#include <array>
+#include <vector>
+#include <iostream>
+#include <iomanip>
+#include <string>
+using namespace std;
+
+
+
+int main() {
+
+	int a = 10; 
+	
+	int & x = a;
+
+	cout << a << endl;
+	cout << x << endl;
+	cout << &a << endl;
+	cout << &x << endl << endl;
+
+
+	int* p = &x;
+	cout << p << endl;
+	cout << *p << endl;
+	cout << &p << endl<< endl;
+
+	int b = 20;
+
+	p = &b;
+
+
+	cout << p << endl;
+	cout << *p << endl;
+	cout << &p << endl;
+	// but we cant assign the reference to another variable
+	// x = b is wrong
+
+
+}
