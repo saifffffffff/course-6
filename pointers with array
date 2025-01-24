@@ -1,0 +1,60 @@
+
+#include "MyLib.h"
+#include <array>
+#include <vector>
+#include <iostream>
+#include <iomanip>
+#include <string>
+using namespace std;
+
+
+
+
+int main() {
+
+	int arr[4] = { 10,20,30,40 };
+	int* ptr;
+	ptr = arr;
+	//ptr is equivalent to &arr[0];
+	//ptr + 1 is equivalent to &arr[1];
+	//ptr + 2 is equivalent to &arr[2];
+	//ptr + 3 is equivalent to &arr[3];\
+	
+    // the array itself is a pointer points to the first element 
+	// cout << *arr ; --- > 10
+	
+	cout << "Addresses are:\n";
+	cout << ptr << endl;
+	cout << ptr + 1 << endl;
+	cout << ptr + 2 << endl;
+	cout << ptr + 3 << endl;
+	cout << "\nValues are: \n";
+	cout << *(ptr) << endl;
+	cout << *(ptr + 1) << endl;
+	cout << *(ptr + 2) << endl;
+	cout << *(ptr + 3) << endl << endl;
+	
+	int* p1 = arr;
+	cout << "method 1 to print the array elements" << endl;
+	for (int i = 0; i < 4; i++)
+		cout << *(p1 + i) <<endl;
+
+	
+	cout << "method 2 to print the array elements" << endl;
+
+	while (p1 < ( arr + sizeof(arr) / sizeof(arr[0]))) {
+		cout << *p1 << endl;
+		p1 += 1;
+	}
+
+
+	
+	cout << "method 3 to print the array elements" << endl;
+	
+	p1 = arr;
+	
+	for (int& num : arr) {
+		cout << *p1++ << endl;
+	}
+
+}
