@@ -1,0 +1,81 @@
+#include "MyLib.h"
+#include <array>
+#include <vector>
+#include <iostream>
+#include <iomanip>
+#include <string>
+using namespace std;
+
+struct stPerson {
+	int a; 
+	int r;
+	int b;
+	double c;
+};
+
+
+
+
+int main() {
+
+	void* p;
+	
+	float a = 10.3;
+	
+	p = &a;
+	cout << "address of float is : " << p << endl;
+	cout << "value of the float is : " << *(static_cast<float*>(p)) << endl << endl;
+
+	int b = 23;
+	
+	p = &b;
+	cout << "address of int b : " << p << endl;
+	cout << "value of int b : " << *((int*)p) << endl << endl;
+
+
+	
+	string name = "saif";
+	
+	p = &name;
+
+	cout << "address of string name : " << p << endl;
+	cout << "value of string name : " << *(static_cast<string*> (p)) << endl << endl;
+
+	bool c = true;
+	
+	p = &c;
+	cout << "address of bool c : " << p << endl;
+	cout << "value of bool c : " << *(static_cast<bool*> (p)) << endl << endl;
+	
+	double d = 20.2;
+	
+	p = &d;
+
+	cout << "address of double d : " << d << endl;
+	cout << "value of double d : " << *(static_cast<double*>(p)) << endl << endl;
+	
+	int arr[] = { 1, 2, 3 };
+
+	p = arr;
+
+	cout << "address of arr : " << p << endl;
+
+	cout << "value of the first element of the arr : " << *(static_cast<int*>(p)) << endl << endl;
+
+
+	stPerson person;
+	person.a = 1;
+	p = &person;
+
+
+	cout << "address of the first element in the person structure : " << p << endl;
+	cout << "value of the first element in the person structure : " << (static_cast<stPerson*>(p))->a << endl << endl;
+
+	char e = 'a';
+	p = &e;
+	cout << "address of character a is : " << p << endl;
+	cout << "the value of character a is : " << *((char*)p) << endl << endl;
+
+
+	
+}
