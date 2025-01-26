@@ -1,0 +1,38 @@
+
+#include "MyLib.h"
+#include <array>
+#include <vector>
+#include <iostream>
+#include <iomanip>
+#include <string>
+using namespace std;
+
+struct stStudent {
+	string* name;
+	int* age;
+};
+
+
+void FillStudentStruct(stStudent *student ) {
+	student->age = new int;
+	*student->age = Read::ReadNumberInRange(1, 100, "student's age : ");
+	student->name = new string;
+	*student->name = Read::ReadString("student's name : ");
+}
+
+int main() {
+	srand((unsigned)time(NULL));
+
+	
+	stStudent *student = new stStudent;
+
+	FillStudentStruct(student);
+
+	cout << *student->name << endl << *student->age;
+	delete student->name;
+	delete student->age;
+	delete student;
+
+
+
+}
