@@ -1,0 +1,61 @@
+#include "MyLib.h"
+#include <array>
+#include <vector>
+#include <iostream>
+#include <iomanip>
+#include <string>
+
+
+using namespace std;
+
+
+
+void method1() {
+	int size;
+	cout << "size of the array : ";
+	cin >> size;
+
+	int* arr = new int[size];
+
+	for (int i = 0; i < size; i++)
+	{
+		cout << "index " << i << " : ";
+		cin >> arr[i];
+	}
+
+	for (int i = 0; i < size; i++)
+		cout << arr[i] << " ";
+
+	delete[] arr;
+
+}
+
+void method2() {
+	int size;
+	cout << "size of the array : ";
+	cin >> size;
+
+	int* arr = new int[size];
+
+	for (int i = 0; i < size; i++)
+	{
+		cout << "index " << i << " : ";
+		cin >> *(arr+i);
+	}
+
+	for (int i = 0; i < size; i++)
+		cout << *(arr+i) << " ";
+
+	delete[] arr;
+}
+
+int main() {
+	srand((unsigned)time(NULL));
+	// dynamic array
+
+	method1();
+	cout << endl;
+	method2();
+
+
+}
