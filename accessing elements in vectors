@@ -1,0 +1,35 @@
+#include "MyLib.h"
+#include <array>
+#include <vector>
+#include <iostream>
+#include <iomanip>
+#include <string>
+
+
+using namespace std;
+
+
+int main() {
+	
+	vector <int> numbers{ 1,2,3 };
+	// accessing to element in vectors 
+	// method one 
+	cout << numbers[0] << endl;
+	// method two
+	cout << numbers.at(0) << endl;
+
+	// printing the vector elements 
+	for (const int& num : numbers) {
+		cout << num << endl;
+	}
+	// changing the values of vector using ranged for loop
+
+	for (int& num : numbers) {
+		num = 10;
+	}
+
+	for (const int& num : numbers) {
+		cout << num << endl;
+	}
+ 	
+}
