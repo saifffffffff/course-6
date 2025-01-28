@@ -1,0 +1,27 @@
+
+#include "MyLib.h"
+#include <array>
+#include <vector>
+#include <iostream>
+#include <iomanip>
+#include <string>
+
+
+using namespace std;
+
+int GlobalVar = 10; // stored in the global area
+
+int main() {
+	
+	int num1 = 10; // local variables stored in the stack
+	int num2 = 4; // local variables stored in the stack
+
+	int* p; // local variables stored in the stack
+	p = new int(10); // stored in the heap
+
+	cout << "address from the stack : " << &p << endl;
+	cout << "address from the heap : " << p;
+
+	int arr[10]; // stored in the heap
+
+}
