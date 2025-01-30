@@ -1,0 +1,40 @@
+#include "MyLib.h"
+#include <array>
+#include <vector>
+#include <iostream>
+#include <iomanip>
+#include <string>
+
+
+using namespace std;
+
+int main() {
+	
+	try {
+		throw 4;
+	}
+	catch (int num) {
+		cout << "caught number " << num << endl;
+	}
+	
+	vector<short> nums = { 1, 2,3 };
+	
+	try {
+		cout << nums.at(3);
+	}
+	catch (...) { // (...) catch all
+		cout << "out of range"<< endl;
+	}
+
+	int a = Read::ReadValidNumber("number 1 : ");
+	int b = Read::ReadValidNumber("number 2 ");
+	
+	try {
+		if (b == 0)
+			throw "division by zero";
+		float result = a / b;
+	}
+	catch (const char * msg) {
+		cout << msg << endl;
+	}
+
