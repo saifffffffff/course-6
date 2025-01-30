@@ -1,0 +1,32 @@
+#include "MyLib.h"
+#include <array>
+#include <vector>
+#include <iostream>
+#include <iomanip>
+#include <string>
+
+
+using namespace std;
+
+
+int main() {
+
+	// some tips
+	// .begin() returns an iterator points at the first element in the vector
+	// .end() returns an iterator points at the element after the last element in the array
+
+	vector <int> numbers = { 1, 2, 3, 4, 5 };
+	vector<int>::iterator iter; // iter is an object from the vector 
+
+	for (iter = numbers.begin(); iter != numbers.end(); iter++)
+		cout << *iter << " ";
+	cout << endl;
+
+	for (iter = numbers.begin(); iter < numbers.end(); iter++)
+		cout << *iter << " ";
+	cout << endl;
+
+	
+	
+
+}
