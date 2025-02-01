@@ -1,0 +1,47 @@
+
+
+
+#include <iostream>
+#include <ctime>
+
+
+using namespace std;
+
+#pragma warning (disable : 4996) // this code disable any error // here the 4996 is the error's number
+
+
+int main() {
+	
+	//time_t is a --- > typedef long long time_t OR  using time_t = long long;
+	time_t TimeSince1970InSec = time(0);
+	cout <<"time since 1970 in seconds : " << TimeSince1970InSec << endl;
+	cout <<"time since 1970 in minutes : " << TimeSince1970InSec / 60.f << endl;
+	cout <<"time since 1970 in hours : " << TimeSince1970InSec / 60 / 60.f << endl;
+	cout <<"time since 1970 in days : " << TimeSince1970InSec / 60 / 60 / 24.f << endl;
+	
+	// ctime convert the seconds into year month day ... in the local time (jordan in my case)
+	// it accepts address as a param and returns a c style string 
+	
+	const char * calender = ctime(&TimeSince1970InSec);
+
+	cout <<"my calender is : " << calender << endl;
+
+	// to print the calender in the universal time
+	// gmtime returns a pointer points on structure tm 
+
+	tm * Structure_Of_Universal_Time = gmtime(&TimeSince1970InSec);
+	
+	cout << "Time in GMT : " << endl;
+	cout  << Structure_Of_Universal_Time->tm_hour << " : " ;
+	cout << Structure_Of_Universal_Time->tm_min << " : " ;
+	cout << Structure_Of_Universal_Time->tm_sec << endl;
+
+	
+	// if you want to converst the structure into string use this function 
+	
+	const char* GMT_calender = asctime(Structure_Of_Universal_Time);
+	
+	cout << GMT_calender << endl;
+	
+	
+}
